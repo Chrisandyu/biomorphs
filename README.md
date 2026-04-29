@@ -36,7 +36,8 @@ Child `i` mutates gene `i` by ±1 or ±2. Each child also has a 20% chance of ga
 
 ## To run:
 1. clone the repo
-2. ```sh
+2. 
+```sh
 npm i
 npm run dev
 ```
