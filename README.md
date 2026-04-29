@@ -1,42 +1,41 @@
-# sv
+# Biomorphs
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Bassed off of Richard Dawkins' biomorph simulation from *The Blind Watchmaker* (1986)
 
-## Creating a project
+## How it works
 
-If you're seeing this, you've probably already done this step. Congrats!
+Each creature is defined by a genome of *9 integer genes*. A recursive tree is drawn from those genes that branches left and right. You can artificially select which creature breeds the next.
 
-```sh
-# create a new project
-npx sv create my-app
+## The genes
+
+The 9 genes map directly to the 8 compass directions for branches to grow
+where
+```
+dx = [ -g1, -g0,   0,  g0,  g1,  g2,   0, -g2 ]
+dy = [  g5,  g4,  g3,  g4,  g5,  g6,  g7,  g6 ]
 ```
 
-To recreate this project with the same configuration:
+| Gene | Controls |
+|------|----------|
+| `g0` | x-spread of NE/NW branches |
+| `g1` | x-spread of E/W branches |
+| `g2` | x-spread of SE/SW branches |
+| `g3` | y-length of (N) segment |
+| `g4` | y-length of NE/NW diagonal segments |
+| `g5` | y-length of E/W flat segments |
+| `g6` | y-length of SE/SW diagonal segments |
+| `g7` | y-length of S segment |
+| `g8` | Recursion depth (3-9) |
 
+
+## Mutation
+
+Child `i` mutates gene `i` by ±1 or ±2. Each child also has a **20% chance** of gaining/losing one recursion level
+
+## To run:
+1. clone the repo
+2. 
 ```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --no-types --install npm biomorph
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+npm i
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
