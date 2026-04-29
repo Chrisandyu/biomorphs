@@ -6,7 +6,7 @@ Bassed off of Richard Dawkins' biomorph simulation from *The Blind Watchmaker* (
 
 Each creature is defined by a genome of 9 integers/genes  
 A recursive tree is drawn from those genes that branches left and right  
-You can artificially select which creature breeds the next.  
+You can artificially select which creature breeds the next
 
 ## The genes
 
@@ -36,8 +36,7 @@ Child `i` mutates gene `i` by ±1 or ±2. Each child also has a 20% chance of ga
 
 ## To run:
 1. clone the repo
-2. 
-```sh
+2.```sh
 npm i
 npm run dev
 ```
