@@ -157,7 +157,9 @@
     </header>
 
     {#if selecting}
-        <main>
+        <main
+            style="display: flex; flex-direction: column; align-items: center;"
+        >
             <div
                 style="
           display: grid;
@@ -209,7 +211,9 @@
             </p>
         </main>
     {:else}
-        <main>
+        <main
+            style="display: flex; flex-direction: column; align-items: center;"
+        >
             <div
                 style="
           display: grid;

@@ -15,7 +15,7 @@
         canvas.style.width = size + "px";
         canvas.style.height = size + "px";
         const ctx = canvas.getContext("2d");
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.scale(dpr, dpr);
         ctx.fillStyle = isParent ? "#081510" : hovered ? "#0f1820" : "#0d0d0f";
         ctx.fillRect(0, 0, size, size);
         const color = isParent ? "#7cffd4" : hovered ? "#a8ffe4" : "#4dc99a";
@@ -45,9 +45,6 @@
     position: relative;
     width: {size}px;
     height: {size}px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid {isParent ? '#7cffd4' : hovered ? '#3d9970' : '#1e1e26'};
     border-radius: 10px;
     background: transparent;
