@@ -55,10 +55,17 @@
     onMount(() => {
         const update = () => {
             const vw = window.innerWidth;
-            cellSize =
+            const vh = window.innerHeight;
+
+            const byWidth =
                 vw < 640 ? Math.floor((vw - 40) / 3) : vw < 1000 ? 170 : 180;
-            selectSize =
+            const byHeight = Math.floor((vh - 330) / 3);
+            cellSize = Math.max(60, Math.min(byWidth, byHeight));
+
+            const selByWidth =
                 vw < 640 ? Math.floor((vw - 40) / 4) : vw < 1000 ? 130 : 140;
+            const selByHeight = Math.floor((vh - 310) / 3);
+            selectSize = Math.max(60, Math.min(selByWidth, selByHeight));
         };
         update();
         window.addEventListener("resize", update);
@@ -68,11 +75,12 @@
 
 <div
     style="
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem 1.5rem;
+  padding: 2rem 1rem 0;
   gap: 2rem;
   background: #0d0d0f;
   color: #e8e8f0;
@@ -249,9 +257,9 @@
 
         <footer
             style="
-      margin-top: auto; padding-top: 1rem;
+      margin-top: auto; padding-top: 1rem; padding-bottom: 5rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: .85rem; color: #4a4a6a;
+      font-size: 1rem; color: #4a4a6a;
       word-break: break-all; max-width: 580px; text-align: center;
     "
         >
