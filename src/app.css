@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+    color-scheme: dark;
+}
+
+html,
+body {
+    background-color: #0d0d0f;
+    color: #e8e8f0;
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+}
