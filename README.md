@@ -32,7 +32,7 @@ dy = [g5, g4, g3, g4, g5, g6, g7, g6]
 
 ## Mutation
 
-Child `i` mutates gene `i` by +-1 or +-2
+Child `i` mutates gene `i` by +-1 or +-2  
 Each child also has a 20% chance of gaining/losing one recursion level
 
 ## To run:
